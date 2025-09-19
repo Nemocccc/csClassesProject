@@ -14,15 +14,15 @@ function cs142MakeMultiFilter(originalArray) {
     let currentArray = [...originalArray]
 
     let arrayFilterer = (filterCriteria = null, callback = null) => {
-        if (typeof filterCriteria != "function") {
+        if (typeof filterCriteria !== "function") {
             return currentArray;
         }
 
         currentArray = currentArray.filter(
-            item => filterCriteria(item)
+            item => filterCriteria(item),
         );
 
-        if (typeof callback != "function") {
+        if (typeof callback !== "function") {
             return arrayFilterer;
         }
 
